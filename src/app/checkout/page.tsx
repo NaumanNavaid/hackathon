@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { FaChevronRight, FaTimes } from 'react-icons/fa'
 import { Button } from '@/components/ui/button'
-
+import Service from '../component/service'
 const page = () => {
   return (
    <div>
@@ -170,7 +170,7 @@ const page = () => {
        </div>
     </div>
    
-     
+     <Service/>
      
    </div>
   )
