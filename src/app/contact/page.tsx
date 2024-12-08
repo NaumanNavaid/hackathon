@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaChevronRight, FaClock, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
 import Image from 'next/image';
+import Service from '../component/service';
 
 const page = () => {
   return (
@@ -81,6 +82,7 @@ const page = () => {
           </div>
         </div>
       </div>
+     <Service/>
     </div>
   );
 }
