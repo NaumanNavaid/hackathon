@@ -25,6 +25,10 @@ const page = () => {
           <p className='mt-2 text-[#9F9F9F] font-normal text-base'>For More Information About Our Product & Services. Please Feel Free To Drop <br /> An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!</p>
         </div>
 
+        <div className='mt-16'>
+
+        </div>
+
        </div>
 
 </div>
