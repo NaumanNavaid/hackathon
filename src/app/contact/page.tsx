@@ -28,7 +28,7 @@ const page = () => {
           Email. Our Staff Always Be There To Help You Out. Do Not Hesitate! </p>        
         </div>
         <div className=" lg:p-6   mt-12 grid gap-6 md:grid-cols-2">
-          <div>
+          <div className='mt-10'>
 
             <div className="mb-4 flex items-center">
               <FaMapMarkerAlt className="text-gray-700 mr-2" />
