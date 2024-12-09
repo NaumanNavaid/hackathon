@@ -32,7 +32,7 @@ const page = () => {
                 <input
               type="text"
           
-              className="block w-[423px] px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
+              className="block lg:w-[423px] sm:w-80  px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
        
             />
             </div>
@@ -41,7 +41,7 @@ const page = () => {
                 <input
               type="text"
           
-              className="block w-[423px] px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
+              className="block lg:w-[423px] sm:w-80  px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
        
             />
             </div>
@@ -65,7 +65,7 @@ const page = () => {
                 <input
               type="text"
           
-              className="block w-[423px] px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
+              className="block lg:w-[423px] sm:w-80  px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
        
             />
             </div>

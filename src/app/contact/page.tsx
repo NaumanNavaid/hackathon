@@ -2,6 +2,8 @@ import React from 'react';
 import { FaChevronRight, FaClock, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
 import Image from 'next/image';
 import Service from '../component/service';
+import { Button } from '@/components/ui/button';
+
 
 const page = () => {
   return (
@@ -22,18 +24,16 @@ const page = () => {
         <div className='text-center'>
           <h1 className='font-semibold text-4xl'>Get In Touch With Us</h1>
           <p className='mt-2 text-[#9F9F9F] font-normal text-base'>
-            For more information about our product & services. Please feel free to drop an email. Our staff is always there to help you out. Do not hesitate!
-          </p>
+          For More Information About Our Product & Services. Please Feel Free To Drop Us An <br />
+          Email. Our Staff Always Be There To Help You Out. Do Not Hesitate! </p>        
         </div>
-
-        <div className="p-6 border rounded-lg shadow-md mt-12 grid gap-6 md:grid-cols-2">
+        <div className=" lg:p-6   mt-12 grid gap-6 md:grid-cols-2">
           <div>
-            <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
 
             <div className="mb-4 flex items-center">
               <FaMapMarkerAlt className="text-gray-700 mr-2" />
               <div>
-                <p><strong>Address:</strong></p>
+                <p><strong>Address</strong></p>
                 <p>236 5th SE Avenue, New York NY10000, United States</p>
               </div>
             </div>
@@ -57,29 +57,49 @@ const page = () => {
             </div>
           </div>
 
-          <div>
-            <h3 className="text-2xl font-bold mb-4">Send Us a Message</h3>
-            <form>
-              <label className="block mb-2">
-                <span className="text-gray-700">Username or email address</span>
-                <input type="email" className="mt-1 block w-full p-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600" required />
-              </label>
-              <label className="block mb-2">
-                <span className="text-gray-700">Password</span>
-                <input type="password" className="mt-1 block w-full p-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600" required />
-              </label>
-              <div className="mb-4">
-                <label className="inline-flex items-center">
-                  <input type="checkbox" className="form-checkbox" />
-                  <span className="ml-2 text-gray-700">Remember me</span>
-                </label>
-              </div>
-              <button type="submit" className="w-full bg-black text-white py-2 rounded-lg shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50">Log In</button>
-              <div className="text-right mt-2">
-                <a href="#" className="text-sm text-gray-600 hover:text-gray-800">Lost Your Password?</a>
-              </div>
-            </form>
-          </div>
+          <div className='flex flex-col gap-8 lg:p-6 sm:mr-6 sm:p-0'>
+            <div>
+                <p className='font-medium text-base'>Your name</p>
+                <input
+              type="text"
+              placeholder='Abc'         
+              className="block lg:w-[423px] sm:w-80  px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
+       
+            />
+            </div>
+            <div>
+                <p className='font-medium text-base'>email address</p>
+                <input
+              type="text"
+              placeholder='Abc@def.com'
+              className="block lg:w-[423px] sm:w-80  px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
+       
+            />
+            </div>
+            <div>
+                <p className='font-medium text-base'>Subject</p>
+                <input
+              type="text"
+              placeholder='This is an optional'         
+              className="block lg:w-[423px] sm:w-80  px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
+       
+            />
+            </div>
+            <div>
+                <p className='font-medium text-base'>Message</p>
+                <input
+              type="text"
+              placeholder='Hi! i’d like to ask about'         
+              className="block lg:w-[423px] sm:w-80  px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
+       
+            />
+            </div>
+
+           
+             <Button className='w-[215px] rounded-2xl'>Sumbit </Button>
+       
+         </div>
+
         </div>
       </div>
      <Service/>
