@@ -12,7 +12,7 @@ function page() {
     <div >
     
         <Hero/>
-        <Table />
+        <Table/>
         <Toppicks/>
         <Asgard/>
         <Blog/>
