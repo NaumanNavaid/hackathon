@@ -23,8 +23,8 @@ const blog = () => {
               alt='Sofa 3' />  
               <div className='flex flex-col gap-3 mt-5 text-center'>
                   <h1 className='text-xl font-normal'>Going all-in with millennial design</h1>
-                 <div className='w-32 mx-28'>
-                   <Link href="#" className='font-medium text-2xl pb-3 border-b-2 border-black '>Read More</Link>
+                 <div className='w-36 mx-28 pb-3 border-b-2  border-black'>
+                   <Link href="#" className='font-medium text-2xl  '>Read More</Link>
                    </div> 
                  <div className='flex gap-5 items-center justify-center mt-3 font-light text-base'>
                      <div className='flex gap-3'>
@@ -47,9 +47,10 @@ const blog = () => {
              alt='Sofa 3' />  
               <div className='flex flex-col gap-3 mt-5 text-center'>
                   <h1 className='text-xl font-normal'>Going all-in with millennial design</h1>
-                 <div className='w-32 mx-28'>
-                   <Link href="#" className='font-medium text-2xl pb-3 border-b-2 border-black '>Read More</Link>
+                  <div className='w-36 mx-28 pb-3 border-b-2  border-black'>
+                   <Link href="#" className='font-medium text-2xl  '>Read More</Link>
                    </div> 
+
                  <div className='flex gap-5 items-center justify-center mt-3 font-light text-base'>
                      <div className='flex gap-3'>
                          <FiClock className='w-[18px] h-[18px] mt-1 '/>
@@ -71,8 +72,8 @@ const blog = () => {
                 alt='Sofa 3' />  
               <div className='flex flex-col gap-3 mt-5 text-center'>
                   <h1 className='text-xl font-normal'>Going all-in with millennial design</h1>
-                 <div className='w-32 mx-28'>
-                   <Link href="#" className='font-medium text-2xl pb-3 border-b-2 border-black '>Read More</Link>
+                  <div className='w-36 mx-28 pb-3 border-b-2  border-black'>
+                   <Link href="#" className='font-medium text-2xl  '>Read More</Link>
                    </div> 
                  <div className='flex gap-5 items-center justify-center mt-3 font-light text-base'>
                      <div className='flex gap-3'>

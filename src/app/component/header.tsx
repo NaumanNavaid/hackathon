@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <div className='relative'>
-      {/* Desktop Navigation - Unchanged */}
+    
       <div className='hidden lg:flex lg:gap-32 lg:items-end lg:justify-end'>
         <ul className='font-medium lg:text-base lg:gap-[75px] flex my-8'>
           <Link href="/" className='hover:text-gray-600'>Home</Link>
@@ -45,7 +45,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <div className='lg:hidden'>
         {/* Mobile Menu Toggle */}
         <div className='flex justify-between items-center p-4'>
@@ -82,7 +81,7 @@ const Header = () => {
           />
         )}
 
-        {/* Mobile Menu */}
+       
         <div 
           className={`
             fixed top-0 left-0 w-64 h-full bg-white 
@@ -94,7 +93,7 @@ const Header = () => {
             <Link 
               href="/" 
               className='block py-2 text-lg'
-              onClick={toggleMobileMenu}
+              
             >
               Home
             </Link>
