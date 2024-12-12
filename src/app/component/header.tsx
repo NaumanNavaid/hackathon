@@ -22,7 +22,7 @@ const Header = () => {
         <ul className='font-medium lg:text-base lg:gap-[75px] flex my-8'>
           <Link href="/" className='hover:text-gray-600'>Home</Link>
           <Link href="/shop" className='hover:text-gray-600'>Shop</Link>
-          <Link href="/About" className='hover:text-gray-600'>About</Link>
+          <Link href="/blog" className='hover:text-gray-600'>About</Link>
           <Link href="/contact" className='hover:text-gray-600'>Contact</Link>
         </ul>
         
