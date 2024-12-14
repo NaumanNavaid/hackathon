@@ -1,8 +1,8 @@
-import { url } from 'inspector'
+
 import React from 'react'
 import Image from 'next/image'
 import Service from '../component/service'
-import { FaChevronRight, FaFilter, FaList, FaThLarge } from 'react-icons/fa'
+import { FaChevronRight } from 'react-icons/fa'
 
 
 const page = () => {
@@ -25,9 +25,8 @@ const page = () => {
         <div className='bg-[#FAF4F4] mt-6 md:mt-10'>
         <div className='container mx-auto px-4 md:px-8 lg:px-20'>
           <div className='flex flex-col md:flex-row  justify-between items-center py-6'>
-            {/* Left Side: Filters and View Options */}
             <div className='flex flex-wrap items-center gap-4 md:gap-6 w-full md:w-auto'>
-              {/* Filter */}
+
               <button className='flex items-center gap-2'>
                <Image src="/icon/Filter.svg" width={25} height={25} alt='filter' />
                 <span className='font-normal text-base'>Filter</span>
