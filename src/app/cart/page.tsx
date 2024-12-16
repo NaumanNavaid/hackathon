@@ -38,7 +38,7 @@ const page = () => {
  
   <div className='flex lg:gap-10 flex-row  lg:items-start'>
     <Image
-      src="/Images/Cart.svg" 
+      src="/Images/cart.svg" 
       width={106}
       height={106}
       alt='cart'

@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './component/header'
+
 import Table from './component/table'
 import Hero from './component/hero'
 import Toppicks from './component/toppicks'

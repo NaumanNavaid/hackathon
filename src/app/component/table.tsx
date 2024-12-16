@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Table = () => {
   return (
     <div className='bg-[#FAF4F4] w-full'>
-      <div className='flex lg:flex-row sm:flex-col gap-2 pt-4 mx-auto max-w-[1200px] px-4'>
+      <div className='flex lg:flex-row sm:flex-col gap-2 pt-4 mx-auto px-4'>
         <div className='flex flex-col relative w-full'>
           <div className='relative w-full sm:h-96 h-[562px] lg:h-[562px]'>
             <Image 

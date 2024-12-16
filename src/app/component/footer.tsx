@@ -5,8 +5,8 @@ import { RxDividerVertical } from 'react-icons/rx'
 const Footer = () => {
   return (
     <div className='mt-32 text-black font-medium text-base'>
-       <div className='mx-[100px] flex lg:flex-row sm:flex-col gap-24 border-b pb-20 border-[#D9D9D9]'>
-         <div className='font-normal text-[#9F9F9F] w-[285px] mt-20'>
+       <div className=' flex mx-24  lg:flex-row sm:flex-col gap-24 border-b pb-20 border-[#D9D9D9]'>
+         <div className='font-normal text-[#9F9F9F] lg:w-[285px] mt-20'>
              400 University Drive Suite 200 Coral Gables,
              FL 33134 USA
          </div>
@@ -26,7 +26,6 @@ const Footer = () => {
              <Link href="/checkout">Payment Options</Link>
              <Link href="#">Returns</Link>
              <Link href="#">Privacy Policies</Link>
-
             </div>        
             
           <div className='flex flex-col gap-14'>
