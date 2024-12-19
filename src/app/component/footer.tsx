@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import React from 'react'
-import { RxDividerVertical } from 'react-icons/rx'
 
 const Footer = () => {
   return (
@@ -30,7 +29,7 @@ const Footer = () => {
             
           <div className='flex flex-col gap-14'>
              <h1 className='text-[#9F9F9F]'>Newsletter</h1>
-             <div className='flex gap-1'>
+             <div className='flex lg:flex-row flex-col gap-1'>
                 <input type="text" placeholder='Enter Your Email Address' className='text-[#9F9F9F] border-b-2 border-black pb-3' />
                 <button className='pb-3 border-b-2 border-black'>SUBSCRIBE</button>
                 </div>       

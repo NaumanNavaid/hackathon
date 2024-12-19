@@ -111,14 +111,13 @@ const Header = () => {
       </div>
 
       <div className="lg:hidden">
-  {/* Navbar top section */}
   <div className="flex justify-between items-center p-4">
-    {/* Hamburger menu button */}
+
     <button onClick={toggleMobileMenu} className="z-50">
       {isMobileMenuOpen ? <FiX className="w-6 h-6"  /> : <FiMenu className="w-6 h-6" />}
     </button>
 
-    {/* Right-side icons */}
+  
     <div className="flex items-center space-x-4">
       <Link href="/account">
         <Image 
@@ -212,7 +211,7 @@ const Header = () => {
           <Link href="/shop" className="block py-2 text-lg" onClick={toggleMobileMenu}>
             Shop
           </Link>
-          <Link href="/about" className="block py-2 text-lg" onClick={toggleMobileMenu}>
+          <Link href="/blog" className="block py-2 text-lg" onClick={toggleMobileMenu}>
             About
           </Link>
           <Link href="/contact" className="block py-2 text-lg" onClick={toggleMobileMenu}>

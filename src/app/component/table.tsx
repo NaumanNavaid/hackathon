@@ -7,7 +7,7 @@ const Table = () => {
     <div className='bg-[#FAF4F4] w-full'>
       <div className='flex lg:flex-row sm:flex-col gap-2 pt-4 mx-auto px-4'>
         <div className='flex flex-col relative w-full'>
-          <div className='relative w-full sm:h-96 h-[562px] lg:h-[562px]'>
+          <div className='relative w-full sm:h-96 lg:h-[562px]'>
             <Image 
               src="/Images/Table.svg" 
               alt='Side Table' 
@@ -27,7 +27,7 @@ const Table = () => {
         </div>
 
         <div className='flex flex-col relative w-full'>
-          <div className='relative w-full h-[562px] sm:h-[260px] lg:h-[562px]'>
+          <div className='relative w-full  sm:h-[260px] lg:h-[562px]'>
             <Image 
               src="/Images/Sofa 2.svg" 
               alt='Sofa' 

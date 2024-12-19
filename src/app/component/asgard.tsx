@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Asgard = () => {
   return (
-    <div className="flex lg:flex-row sm:flex-col items-center justify-center h-[660px] bg-[#FFF9E5]">
+    <div className="flex lg:flex-row sm:flex-col items-center justify-center lg:h-[660px] bg-[#FFF9E5]">
       <div className="relative -left-12">
         <Image
           src="/Images/Asgard Sofa.svg"
