@@ -9,7 +9,7 @@ import Service from '../component/service'
 const page = () => {
   return (
     <div>
-     <div className='bg-cover bg-center h-[320px]  flex flex-col '
+     <div className='bg- bg-center h-[320px]  flex flex-col '
        style={{backgroundImage: "url('/Images/Background 2.svg')"}}>
           <div className='flex flex-col  items-center justify-center mt-10'>
             <Image src="/icon/Logo.svg" width={77} height={77} alt='Logo'/>
