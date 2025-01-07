@@ -12,7 +12,7 @@ const Table = () => {
               src="/Images/Table.svg" 
               alt='Side Table' 
               fill
-              className='object-cover'
+              className=''
             />
           </div>
           <div className='absolute bottom-10 lg:ml-40 sm:ml-4 font-medium flex flex-col gap-6'>
@@ -32,7 +32,7 @@ const Table = () => {
               src="/Images/Sofa 2.svg" 
               alt='Sofa' 
               fill
-              className='object-cover'
+              className=''
             />
           </div>
           <div className='absolute bottom-10 lg:ml-40 sm:ml-4 font-medium flex flex-col gap-6'>
