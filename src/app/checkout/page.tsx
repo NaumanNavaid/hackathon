@@ -19,7 +19,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className='m-20'>
+        <div className='md:m-20'>
        <div className='grid lg:grid-cols-2 gap-4 lg:grid-rows-1'>
          <div className='flex flex-col gap-8 p-6'>
             <h1 className='font-semibold text-4xl'>Billing details</h1>

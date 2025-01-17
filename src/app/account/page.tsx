@@ -23,7 +23,7 @@ const page = () => {
           </div>
        </div>
 
-    <div className='m-20'>
+    <div className='md:m-20'>
        <div className='grid lg:grid-cols-2 gap-4 lg:grid-rows-1'>
          <div className='flex flex-col gap-8 p-6'>
             <h1 className='font-semibold text-4xl'>Log In</h1>
@@ -32,7 +32,7 @@ const page = () => {
                 <input
               type="text"
           
-              className="block lg:w-[423px] sm:w-80  px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
+              className="block lg:w-[423px] sm:w-64 px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
        
             />
             </div>
@@ -41,7 +41,7 @@ const page = () => {
                 <input
               type="text"
           
-              className="block lg:w-[423px] sm:w-80  px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
+              className="block lg:w-[423px] sm:w-64 px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
        
             />
             </div>
@@ -52,7 +52,7 @@ const page = () => {
                 />
                 <p className='ml-4'>Remember me</p>
             </div>
-            <div className='flex gap-8 '>
+            <div className='flex flex-col  md:flex-row  gap-8 '>
              <Button className='w-[215px] rounded-2xl'>Log in</Button>
              <Link href="#" className='underline decoration-black pt-2'>Lost Your Password?</Link>
             </div>
@@ -65,7 +65,7 @@ const page = () => {
                 <input
               type="text"
           
-              className="block lg:w-[423px] sm:w-80  px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
+              className="block lg:w-[423px] sm:w-64 px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
        
             />
             </div>

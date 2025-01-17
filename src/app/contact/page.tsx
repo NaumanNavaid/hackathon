@@ -20,7 +20,7 @@ const page = () => {
         </div>
       </div>
 
-      <div className='mx-[100px] mt-24'>
+      <div className='md:mx-[100px] mt-24'>
         <div className='text-center'>
           <h1 className='font-semibold text-4xl'>Get In Touch With Us</h1>
           <p className='mt-2 text-[#9F9F9F] font-normal text-base'>
@@ -30,7 +30,7 @@ const page = () => {
         <div className=" lg:p-6   mt-12 grid gap-6 md:grid-cols-2">
           <div className='mt-10'>
 
-            <div className="mb-4 flex items-center">
+            <div className="mb-4 flex ">
               <FaMapMarkerAlt className="text-gray-700 mr-2" />
               <div>
                 <p><strong>Address</strong></p>
@@ -38,7 +38,7 @@ const page = () => {
               </div>
             </div>
 
-            <div className="mb-4 flex items-center">
+            <div className="mb-4 flex ">
               <FaPhoneAlt className="text-gray-700 mr-2" />
               <div>
                 <p><strong>Phone:</strong></p>
@@ -47,7 +47,7 @@ const page = () => {
               </div>
             </div>
 
-            <div className="mb-4 flex items-center">
+            <div className="mb-4 flex ">
               <FaClock className="text-gray-700 mr-2" />
               <div>
                 <p><strong>Working Times:</strong></p>
@@ -57,13 +57,13 @@ const page = () => {
             </div>
           </div>
 
-          <div className='flex flex-col gap-8 lg:p-6 sm:mr-6 sm:p-0'>
+          <div className='flex flex-col gap-8 lg:p-6 sm:mr-6  sm:mx-5 sm:p-0'>
             <div>
                 <p className='font-medium text-base'>Your name</p>
                 <input
               type="text"
               placeholder='Abc'         
-              className="block lg:w-[423px] sm:w-80  px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
+              className="block lg:w-[423px] sm:w-64 px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
        
             />
             </div>
@@ -72,7 +72,7 @@ const page = () => {
                 <input
               type="text"
               placeholder='Abc@def.com'
-              className="block lg:w-[423px] sm:w-80  px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
+              className="block lg:w-[423px] sm:w-64 px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
        
             />
             </div>
@@ -81,7 +81,7 @@ const page = () => {
                 <input
               type="text"
               placeholder='This is an optional'         
-              className="block lg:w-[423px] sm:w-80  px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
+              className="block lg:w-[423px] sm:w-64 px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
        
             />
             </div>
@@ -90,7 +90,7 @@ const page = () => {
                 <input
               type="text"
               placeholder='Hi! i’d like to ask about'         
-              className="block lg:w-[423px] sm:w-80  px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
+              className="block lg:w-[423px] sm:w-64 px-3 py-2 mt-4 h-20 text-sm border rounded-md shadow-sm focus:ring-black focus:border-black border-gray-300"
        
             />
             </div>
