@@ -1,10 +1,8 @@
-
-import type { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
 import { client } from '@/sanity/lib/client';
+import { NextResponse } from 'next/server';
 
-
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET(request: Request) {
   try {
     // Fetch data from the external API
     const { data } = await axios.get('https://template-0-beta.vercel.app/api/product');
@@ -27,10 +25,11 @@ export async function GET(req: NextApiRequest, res: NextApiResponse) {
 
     // Wait for all products to be inserted
     await Promise.all(insertPromises);
-console.log(insertPromises)
-    res.status(200).json({ message: 'Data migration successful!' });
+    console.log(insertPromises);
+
+    return NextResponse.json({ message: 'Data migration successful!' });
   } catch (error) {
     console.error('Migration error:', error);
-    res.status(500).json({ error: 'Data migration failed.' });
+    return NextResponse.json({ error: 'Data migration failed.' }, { status: 500 });
   }
 }
