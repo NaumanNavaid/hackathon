@@ -17,7 +17,7 @@ const Sidecart = () => {
     return (
         <div>
             <button onClick={toggleCart}>
-                <AiOutlineShoppingCart className='w-7 h-7 hover:text-gray-600' />
+                <AiOutlineShoppingCart className='md:w-7 md:h-7 sm:w-6 sm:h-6 hover:text-gray-600' />
             </button>
             <AnimatePresence>
                 {isCartOpen && (

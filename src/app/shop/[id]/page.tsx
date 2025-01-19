@@ -14,20 +14,15 @@ const getproduct = async (id: string) => {
       isFeaturedProduct,
       stockLevel,
       category
-    
-
-
-    }[0]
+     }[0]
   `
     const data = await client.fetch(query)
     console.log(data)
     return data
 }
 
-
-
 const page = async ({ params }: { params: { id: string } }) => {
-    const { id } = await params
+    const { id } = params // No need for await here
     const product = await getproduct(id)
     console.log(product)
     return (
@@ -57,8 +52,6 @@ const page = async ({ params }: { params: { id: string } }) => {
                     Add To Cart
                 </Button>
             </div>
-
-
         </div>
     )
 }
