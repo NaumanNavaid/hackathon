@@ -122,8 +122,9 @@ const page = async () => {
         <span className='bg-[#FFF9E5] w-16 h-16 rounded-[10px] text-center pt-4 font-normal text-xl'>3</span>
         <span className='bg-[#FFF9E5] w-24 h-16 rounded-[10px] text-center pt-4 font-normal text-xl'>Next</span>
 
-        <Service />
+      
       </div>
+      <Service />
     </div>
 
     </div>
