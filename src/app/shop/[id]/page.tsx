@@ -5,24 +5,28 @@ import { Button } from '@/components/ui/button'
 
 const getproduct = async (id: string) => {
     const query = `*[_type == "product" && _id == "${id}"]{
-   _id,
-    name,
-      imagePath,
-      price,
-      description,
-      discountPercentage,
-      isFeaturedProduct,
-      stockLevel,
-      category
-     }[0]
-  `
+        _id,
+        name,
+        imagePath,
+        price,
+        description,
+        discountPercentage,
+        isFeaturedProduct,
+        stockLevel,
+        category
+    }[0]`
     const data = await client.fetch(query)
     console.log(data)
     return data
 }
 
-const page = async ({ params }: { params: { id: string } }) => {
-    const { id } = params // No need for await here
+// Ensure the page function signature is correct and type params properly
+interface PageProps {
+  params: { id: string };
+}
+
+const page = async ({ params }: PageProps) => {
+    const { id } = params // No need to await params
     const product = await getproduct(id)
     console.log(product)
     return (
