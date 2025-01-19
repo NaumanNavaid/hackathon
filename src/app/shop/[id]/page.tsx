@@ -22,9 +22,9 @@ const getproduct = async (id: string) => {
 }
 
 // Next.js dynamically loads route parameters automatically
-const page = async ({ params }: { params: { id: string } }) => {
-    const { id } = params // Destructure id from params directly
-    const product = await getproduct(id) // Fetch product by ID
+const page = async (props:any) => {
+    const { params } = props;
+    const product = await getproduct(params.id) // Fetch product by ID
     console.log(product)
 
     return (
