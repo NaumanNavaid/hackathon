@@ -1,78 +1,39 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import Service from '../component/service';
-import { FaChevronRight } from 'react-icons/fa';
-import { client } from '@/sanity/lib/client';
-import Link from 'next/link';
+import React from 'react'
+import Image from 'next/image'
+import Service from '../component/service'
+import { FaChevronRight } from 'react-icons/fa'
+import { client } from '@/sanity/lib/client'
+import Link from 'next/link'
 
-const Page = () => {
-  const [data, setData] = useState<any[]>([]);
-  const [filteredData, setFilteredData] = useState<any[]>([]);
-  const [categories, setCategories] = useState<string[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [showFilter, setShowFilter] = useState(false);
 
-  // Fetch data from Sanity
-  useEffect(() => {
-    const fetchData = async () => {
-      const query = `*[_type == "product"]`;
-      const productData = await client.fetch(query);
-      setData(productData);
-      setFilteredData(productData);
-    };
-
-    fetchData();
-  }, []);
-
-  // Fetch categories
-  useEffect(() => {
-    const fetchCategories = async () => {
-      const queryCategories = `*[_type == "product"] { "category": category }`;
-      const categoryData: { category: string }[] = await client.fetch(queryCategories);
-      const uniqueCategories = Array.from(new Set(categoryData.map((item) => item.category)));
-      setCategories(uniqueCategories);
-    };
-
-    fetchCategories();
-  }, []);
-
-  // Handle category selection for filtering
-  const handleCategorySelect = async (category: string) => {
-    setSelectedCategory(category);
-    const filteredProducts = await client.fetch(`*[_type == "product" && category == $category]`, { category });
-    setFilteredData(filteredProducts);
-  };
-
-  // Reset filter
-  const resetFilter = () => {
-    setSelectedCategory(null);
-    setFilteredData(data);
-  };
+const page = async () => {
+  const query = `*[_type == "product"]`
+  const data = await client.fetch(query)
+  console.log(data)
 
   return (
     <div>
-      {/* Header */}
-      <div className='bg-cover bg-center h-[320px] flex flex-col'
+    <div>
+      {/* Your content here */}
+      <div className='bg-cover bg-center h-[320px]  flex flex-col '
         style={{ backgroundImage: "url('/Images/Background 2.svg')" }}>
-        <div className='flex flex-col items-center justify-center mt-10'>
+        <div className='flex flex-col  items-center justify-center mt-10'>
           <Image src="/icon/Logo.svg" width={77} height={77} alt='Logo' />
           <h1 className='font-medium text-5xl'>Shop</h1>
           <div className='flex gap-2 mt-4 text-base'>
             <p className='font-medium'>Home</p>
             <FaChevronRight className='w-4 h-4 mt-1' />
             <p className='font-light'>Shop</p>
+
           </div>
         </div>
-      </div>
-
-      {/* Filter Bar */}
-      <div className="bg-[#FAF4F4] mt-6 md:mt-10">
+      </div><div className="bg-[#FAF4F4] mt-6 md:mt-10">
         <div className="container mx-auto px-4 md:px-8 lg:px-20">
           <div className="flex flex-col md:flex-row justify-between items-center py-6 gap-4">
-            {/* Left Section: Filter Button */}
+            {/* Left Section */}
             <div className="flex flex-wrap items-center gap-4 md:gap-6 w-full md:w-auto">
-              <button className="flex items-center gap-2 text-sm md:text-base" onClick={() => setShowFilter(!showFilter)}>
+              {/* Filter Button */}
+              <button className="flex items-center gap-2 text-sm md:text-base">
                 <Image src="/icon/Filter.svg" width={25} height={25} alt="filter" />
                 <span className="font-normal">Filter</span>
               </button>
@@ -88,7 +49,7 @@ const Page = () => {
 
               {/* Results Count */}
               <p className="text-xs md:text-sm text-gray-600">
-                Showing {filteredData.length} results
+                Showing 1–16 of 32 results
               </p>
             </div>
 
@@ -112,33 +73,9 @@ const Page = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div><div className='grid lg:grid-cols-3 lg:grid-rows-5 md:mx-20 sm:mx-5 mt-10 gap-4 md:grid-cols-2 md:grid-rows-10'>
+        {data.map((product: any) => (
 
-      {/* Filter Categories */}
-      {showFilter && (
-        <div className="bg-white shadow-md p-4">
-          <h3 className="text-xl font-medium text-gray-800">Filter by Category</h3>
-          <ul className="space-y-2 mt-4">
-            {categories.map((category) => (
-              <li key={category}>
-                <button
-                  onClick={() => handleCategorySelect(category)}
-                  className="text-blue-600 hover:text-blue-800"
-                >
-                  {category}
-                </button>
-              </li>
-            ))}
-            <li>
-              <button onClick={resetFilter} className="text-red-600 hover:text-red-800">Reset Filter</button>
-            </li>
-          </ul>
-        </div>
-      )}
-
-      {/* Product Grid */}
-      <div className='grid lg:grid-cols-3 lg:grid-rows-5 md:mx-20 sm:mx-5 mt-10 gap-4 md:grid-cols-2 md:grid-rows-10'>
-        {filteredData.map((product: any) => (
           <Link key={product._id} href={`/shop/${product._id}`} className='bg-white rounded-[10px] shadow-xl p-4 items-center justify-center flex flex-col gap-4'>
             <div>
               <Image
@@ -157,22 +94,42 @@ const Page = () => {
               <p className="text-sm text-gray-500 mt-2">
                 Featured: {product.isFeaturedProduct ? 'Yes' : 'No'}
               </p>
+
             </div>
           </Link>
-        ))}
-      </div>
 
-      {/* Pagination */}
+
+
+
+
+
+
+
+
+        ))}
+
+
+
+
+
+
+
+
+      </div>
       <div className='flex gap-10 items-center justify-center mt-20'>
         <span className='bg-[#FBEBB5] w-16 h-16 rounded-[10px] text-center pt-4 font-normal text-xl'>1</span>
         <span className='bg-[#FFF9E5] w-16 h-16 rounded-[10px] text-center pt-4 font-normal text-xl'>2</span>
         <span className='bg-[#FFF9E5] w-16 h-16 rounded-[10px] text-center pt-4 font-normal text-xl'>3</span>
         <span className='bg-[#FFF9E5] w-24 h-16 rounded-[10px] text-center pt-4 font-normal text-xl'>Next</span>
-      </div>
 
-      <Service />
+        <Service />
+      </div>
     </div>
+
+    </div>
+
+
   );
 };
 
-export default Page;
+export default page 
