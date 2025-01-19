@@ -3,6 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 
+// Get product data by ID
 const getproduct = async (id: string) => {
     const query = `*[_type == "product" && _id == "${id}"]{
         _id,
@@ -20,23 +21,20 @@ const getproduct = async (id: string) => {
     return data
 }
 
-// Ensure the page function signature is correct and type params properly
-interface PageProps {
-  params: { id: string };
-}
-
-const page = async ({ params }: PageProps) => {
-    const { id } = params // No need to await params
-    const product = await getproduct(id)
+// Next.js dynamically loads route parameters automatically
+const page = async ({ params }: { params: { id: string } }) => {
+    const { id } = params // Destructure id from params directly
+    const product = await getproduct(id) // Fetch product by ID
     console.log(product)
+
     return (
         <div className='grid md:grid-cols-2 gap-10 md:mx-10 sm:mx-4 mt-10'>
             <div className='items-center justify-center flex'>
                 <Image
                     src={product.imagePath}
                     alt={product.name}
-                    width={300} // You still need to provide width and height for aspect ratio calculation
-                    height={300} // Aspect ratio of the image (adjust as needed)
+                    width={300} // Provide width and height for aspect ratio calculation
+                    height={300}
                     className=" md:w-[500px] md:h-[500px] rounded-md"
                 />
             </div>
