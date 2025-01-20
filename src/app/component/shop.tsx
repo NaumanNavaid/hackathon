@@ -5,9 +5,9 @@ import Image from 'next/image';
 import Service from '../component/service';
 import Link from 'next/link';
 import { FaChevronRight } from 'react-icons/fa';
-import { Button } from '@/components/ui/button';
 
-const ITEMS_PER_PAGE = 6
+const ITEMS_PER_PAGE = 6;
+
 const ShopPage = ({
     products,
     categories,
@@ -17,18 +17,40 @@ const ShopPage = ({
 }) => {
     const [filteredProducts, setFilteredProducts] = useState(products);
     const [currentPage, setCurrentPage] = useState(1);
+    const [searchQuery, setSearchQuery] = useState(''); // State for search query
 
     const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
 
+    // Handle category filter
     const handleFilter = (category: string) => {
-        if (category === 'All') {
-            setFilteredProducts(products);
-        } else {
-            setFilteredProducts(products.filter((p) => p.category === category));
-        }
-        setCurrentPage(1)
+        const filteredByCategory =
+            category === 'All'
+                ? products
+                : products.filter((p) => p.category === category);
+
+        // Apply search query on top of category filtering
+        const filteredBySearch = filteredByCategory.filter((p) =>
+            p.name.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+
+        setFilteredProducts(filteredBySearch);
+        setCurrentPage(1);
     };
 
+    // Handle search query
+    const handleSearch = (query: string) => {
+        setSearchQuery(query);
+
+        // Apply search query on top of category filtering
+        const filteredBySearch = products.filter(
+            (p) =>
+                p.name.toLowerCase().includes(query.toLowerCase()) ||
+                p.description.toLowerCase().includes(query.toLowerCase())
+        );
+
+        setFilteredProducts(filteredBySearch);
+        setCurrentPage(1);
+    };
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
@@ -90,27 +112,30 @@ const ShopPage = ({
                             </p>
                         </div>
 
-                        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 mt-4 md:mt-0 w-full md:w-auto">
-                            <div className="flex items-center gap-2">
-                                <span className="text-sm md:text-xl font-normal">Show</span>
-                                <span className="w-12 h-12 md:w-14 md:h-14 bg-white text-[#9F9F9F] flex items-center justify-center font-normal text-sm md:text-xl rounded">
-                                    {filteredProducts.length}
-                                </span>
-                            </div>
 
-                            <div className="flex items-center gap-2 md:gap-4">
-                                <span className="text-sm md:text-xl font-normal">Sort by</span>
-                                <div className="w-36 md:w-48 h-12 md:h-14 bg-white text-[#9F9F9F] flex items-center justify-center font-normal text-sm md:text-xl rounded">
-                                    Default
-                                </div>
-                            </div>
+                        <div className="flex items-center gap-2">
+                            <span className="text-sm md:text-xl font-normal">Show</span>
+                            <span className="w-12 h-12 md:w-14 md:h-14 bg-white text-[#9F9F9F] flex items-center justify-center font-normal text-sm md:text-xl rounded">
+                                {filteredProducts.length}
+                            </span>
+                        </div>
+                        {/* Search Bar */}
+                        <div className="flex items-center gap-2 md:gap-4">
+                            <span className="text-sm md:text-xl font-normal">Search</span>
+                            <input
+                                type="text"
+                                placeholder="Search products..."
+                                value={searchQuery}
+                                onChange={(e) => handleSearch(e.target.value)}
+                                className="w-36 md:w-48 px-4 py-2 text-sm md:text-base border rounded"
+                            />
                         </div>
                     </div>
                 </div>
             </div>
 
             {/* Product Grid */}
-            <div className="grid lg:grid-cols-3  md:mx-20 sm:mx-5 mt-10 gap-4 md:grid-cols-2 ">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 md:mx-20 sm:mx-5 mt-10 gap-4">
                 {currentProducts.map((product: any) => (
                     <Link
                         key={product._id}
@@ -140,7 +165,6 @@ const ShopPage = ({
                 ))}
             </div>
 
-            {/* Pagination */}
             {/* Pagination */}
             <div className="flex gap-4 items-center justify-center mt-10">
                 {Array.from({ length: totalPages }, (_, index) => (
