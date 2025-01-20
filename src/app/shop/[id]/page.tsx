@@ -18,7 +18,8 @@ const getproduct = async (id: string) => {
   return client.fetch(query);
 };
 
-const Page = ({ params }: { params: { id: string } }) => {
+const Page = (props: any) => {
+    const { params } = props;
   const [product, setProduct] = useState<any | null>(null);
 
   useEffect(() => {
