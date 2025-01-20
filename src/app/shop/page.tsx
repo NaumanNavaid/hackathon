@@ -8,7 +8,7 @@ export default async function Page() {
   // Fetch data on the server
   const products = await client.fetch(productsQuery);
   const categoriesData:{ categories : string}[]= await client.fetch(categoriesQuery);
-
+ console.log(products)
   // Extract unique categories
   const uniqueCategories = [...new Set(categoriesData.map((item: any) => item.category))];
 
