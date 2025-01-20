@@ -1,5 +1,6 @@
 import { client } from '@/sanity/lib/client';
 import ShopPage from '../component/shop';
+import React from 'react';
 
 export default async function Page() {
   const productsQuery = `*[_type == "product"]`;
