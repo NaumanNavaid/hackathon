@@ -145,7 +145,7 @@ const ShopPage = ({
                         <div>
                             <Image
                                 src={product.imagePath}
-                                alt="product"
+                                alt={product.name}
                                 width={200}
                                 height={200}
                                 className="h-96 w-96 rounded-md"

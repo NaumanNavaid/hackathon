@@ -1,10 +1,8 @@
-"use client";
 import { client } from '@/sanity/lib/client';
-import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
-const getproduct = async (id: string) => {
+const getProduct = async (id: string) => {
   const query = `*[_type == "product" && _id == "${id}"]{
     _id,
     name,
@@ -18,19 +16,13 @@ const getproduct = async (id: string) => {
   return client.fetch(query);
 };
 
-const Page = (props: any) => {
-    const { params } = props;
-  const [product, setProduct] = useState<any | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getproduct(params.id);
-      setProduct(data);
-    };
-    fetchData();
-  }, [params.id]);
-
-  if (!product) return <div>Loading...</div>;
+const Page = async (props: any) => {
+  const { params } = props;
+  const product = await getProduct(params.id);
+  console.log(product);
+  if (!product) {
+    return <div>Product not found.</div>;
+  }
 
   return (
     <div className="grid md:grid-cols-2 gap-10 md:mx-10 sm:mx-4 mt-10">
