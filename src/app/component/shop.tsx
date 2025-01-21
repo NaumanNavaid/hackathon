@@ -167,21 +167,27 @@ const ShopPage = ({
 
             {/* Pagination */}
             <div className="flex gap-4 items-center justify-center mt-10">
+                {/* Loop through all the pages and create buttons */}
                 {Array.from({ length: totalPages }, (_, index) => (
                     <button
                         key={index}
                         onClick={() => handlePageChange(index + 1)}
-                        className={`w-16 h-16 rounded-[10px] text-xl ${currentPage === index + 1 ? 'bg-[#FBEBB5]' : 'bg-[#FFF9E5]'
+                        className={`w-16 h-16 rounded-[10px] text-xl ${currentPage === index + 1
+                                ? 'bg-[#FBEBB5] text-black' // Active page class
+                                : 'bg-[#FFF9E5] text-black'
                             }`}
                     >
                         {index + 1}
                     </button>
                 ))}
 
+                {/* Next button */}
                 <button
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
-                    className={`w-24 h-16 rounded-[10px] text-xl ${currentPage === totalPages ? 'bg-gray-200 cursor-not-allowed' : 'bg-[#FFF9E5]'
+                    className={`w-24 h-16 rounded-[10px] text-xl ${currentPage === totalPages
+                            ? 'bg-gray-200 cursor-not-allowed'
+                            : 'bg-[#FFF9E5] text-black'
                         }`}
                 >
                     Next
